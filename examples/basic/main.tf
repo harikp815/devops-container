@@ -80,7 +80,7 @@ module "ec2" {
   instance_count = 3
 
   name          = "example-normal"
-  ami           = data.aws_ami.amazon_linux.id
+  ami           = "data.aws_ami.amazon_linux.id"
   instance_type = "t2.medium"
   key_name = "${aws_key_pair.myTerraformKeyPair.key_name}"  
   subnet_id     = tolist(data.aws_subnet_ids.all.ids)[0]
