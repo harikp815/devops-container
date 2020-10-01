@@ -77,10 +77,10 @@ resource "aws_network_interface" "this" {
 module "ec2" {
   source = "../../"
 
-  instance_count = 3
+  instance_count = 2
 
-  name          = "example-normal"
-  ami           = "data.aws_ami.amazon_linux.id"
+  name          = "hari-ex"
+  ami           = "ami-0affd4508a5d2481b"
   instance_type = "t2.medium"
   key_name = "${aws_key_pair.myTerraformKeyPair.key_name}"  
   subnet_id     = tolist(data.aws_subnet_ids.all.ids)[0]
